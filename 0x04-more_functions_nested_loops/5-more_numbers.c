@@ -1,15 +1,15 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * more_numbers - prints 0 - 14
- *
- * Return: void
+ * more_numbers - prints more numbers
+ * Return:void
  */
 
 void more_numbers(void)
 {
 	char n, c;
 	int i = 0;
+
 
 	while (i < 10)
 	{
@@ -21,10 +21,12 @@ void more_numbers(void)
 				_putchar('1');
 				c = n % 10;
 			}
+
 			_putchar('0' + c);
 		}
 
 		_putchar('\n');
 		i++;
 	}
+
 }

@@ -1,22 +1,24 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * list_len - Finds the number of elements in
- *            a linked list_t list.
- * @h: The linked list_t list.
- * @elements: a counter var for size_t (nodes)
- *
- * Return: The number of elements in h.
- */
-size_t list_len(const list_t *h)
+ * get_nodeint_at_index - Find a node in a list.
+ * @head: Address of the first node in a list.
+ * @index: Position of a the node to find (starting from 0).
+ * Return: Node address.
+ **/
+
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	size_t elements = 0;
+	unsigned int y = 0;
 
-	while (h)
+	if (head == NULL)
+		return (NULL);
+	for (y = 0; y < index; y++)
 	{
-		elements++;
-		h = h->next;
+		head = head->next;
+		if (head == NULL)
+			return (NULL);
 	}
-
-	return (elements);
+	return (head);
 }
